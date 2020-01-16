@@ -1,6 +1,6 @@
 def main(ctx):
-  if ctx.build.event == "push":
-    return test("push")
+  if ctx.build.branch == "master":
+    return test("master")
   else:
     return test("etc")
 
