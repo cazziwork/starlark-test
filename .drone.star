@@ -1,10 +1,10 @@
 def main(ctx):
-  if ctx.branch == "master":
-    return test("master")
+  if ctx.build.event == "push":
+    return test("push")
   else:
     return test("etc")
 
-def test(branch):
+def test(event):
   return {
     'kind': 'pipeline',
     'name': 'test',
@@ -13,7 +13,7 @@ def test(branch):
         'name': 'build',
         'image': 'node:10.16.0-alpine',
         'commands': [
-          'echo $branch',
+          'echo $event',
           'npm -v',
         ],
       },
