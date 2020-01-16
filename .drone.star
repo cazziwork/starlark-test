@@ -7,10 +7,10 @@ def main(ctx):
 def test(event):
   return {
     'kind': 'pipeline',
-    'name': event,
+    'name': 'build',
     'steps': [
       {
-        'name': 'build',
+        'name': event,
         'image': 'node:10.16.0-alpine',
         'commands': [
           "echo ${event}",
