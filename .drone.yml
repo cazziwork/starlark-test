@@ -2,7 +2,7 @@ kind: pipeline
 name: staging
 
 steps:
-- name: build
+- name: stag
   image: node:10.16.0-alpine
   commands:
     - npm -v
@@ -21,7 +21,7 @@ kind: pipeline
 name: production
 
 steps:
-- name: build
+- name: prod
   image: node:10.16.0-alpine
   commands:
     - npm -v
