@@ -18,7 +18,7 @@ def test(target):
         'environment': {'GREGORIO_TARGET': secret("GREGORIO_TARGET_" + target)},
         'commands': [
           "echo $${GREGORIO_TARGET}" > echo.txt,
-          "cat echo.txt"
+          "cat echo.txt",
           'npm -v',
         ],
       },
