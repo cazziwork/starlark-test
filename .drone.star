@@ -1,9 +1,8 @@
 def main(ctx):
   if ctx.branch == "master":
-    return test("test")
-  return [
-    test(ctx),
-  ]
+    return test("master")
+  else:
+    return test("etc"),
 
 def test(branch):
   return {
