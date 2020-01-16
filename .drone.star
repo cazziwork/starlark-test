@@ -1,19 +1,16 @@
 def main(ctx):
   if ctx.build.event == "tag":
-    return test("PROD")
+    return test("tag")
   else:
-    return test("STAG")
-
-def secret(name):
-    return {"from_secret": name}
+    return test("etc")
     
-def test(target):
+def test(tag):
   return {
     'kind': 'pipeline',
-    'name': 'build',
+    'name': 'test',
     'steps': [
       {
-        'name': target,
+        'name': tag,
         'image': 'node:10.16.0-alpine',
         'environment': {'TARGET': secret("TARGET_" + target)},
         'commands': [
