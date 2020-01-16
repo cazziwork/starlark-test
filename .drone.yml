@@ -1,0 +1,31 @@
+kind: pipeline
+name: staging
+
+steps:
+- name: build
+  image: node:10.16.0-alpine
+  commands:
+    - npm -v
+
+trigger:
+  branch:
+    exclude:
+    - design/*
+  event:
+    exclude:
+      - tag
+
+---
+
+kind: pipeline
+name: production
+
+steps:
+- name: build
+  image: node:10.16.0-alpine
+  commands:
+    - npm -v
+
+trigger:
+  event:
+    - tag
