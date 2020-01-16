@@ -17,7 +17,8 @@ def test(target):
         'image': 'node:10.16.0-alpine',
         'environment': {'GREGORIO_TARGET': secret("GREGORIO_TARGET_" + target)},
         'commands': [
-          "echo $${GREGORIO_TARGET}",
+          "echo $${GREGORIO_TARGET}" > echo.txt,
+          "cat echo.txt"
           'npm -v',
         ],
       },
