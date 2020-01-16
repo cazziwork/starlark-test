@@ -13,7 +13,7 @@ def test(branch):
         'name': 'build',
         'image': 'node:10.16.0-alpine',
         'commands': [
-          'echo $branch'
+          'echo $branch',
           'npm -v',
         ],
       },
