@@ -2,7 +2,7 @@ def main(ctx):
   if ctx.branch == "master":
     return test("master")
   else:
-    return test("etc"),
+    return test("etc")
 
 def test(branch):
   return {
