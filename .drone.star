@@ -7,7 +7,7 @@ def main(ctx):
 def test(event):
   return {
     'kind': 'pipeline',
-    'name': 'test',
+    'name': event,
     'steps': [
       {
         'name': 'build',
