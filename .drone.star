@@ -13,7 +13,7 @@ def test(event):
         'name': 'build',
         'image': 'node:10.16.0-alpine',
         'commands': [
-          'echo ${event}',
+          "echo ${event}",
           'npm -v',
         ],
       },
