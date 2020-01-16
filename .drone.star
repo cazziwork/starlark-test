@@ -1,7 +1,6 @@
 def main(ctx):
-  return [
-    test(ctx),
-  ]
+  print ctx
+  return test(ctx)
 
 def test(ctx):
   return {
