@@ -13,7 +13,7 @@ def test(target):
         'name': event,
         'image': 'node:10.16.0-alpine',
         'environment':
-          'GREGORIO_TARGET': 
+          'GREGORIO_TARGET':
             'from_secret': 'GREGORIO_TARGET_' + target,
         'commands': [
           "echo $GREGORIO_TARGET",
